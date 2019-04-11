@@ -21,7 +21,7 @@ public class Sprint {
 	private Date data_inicio_real;
 	private Date data_fim_real;
 	private String anotaçao;
-	private List<Caso_uso> casos_uso;
+	private List<CasoUso> casos_uso;
 	
 	public Integer getNumero_sprint() {
 		return numero_sprint;
@@ -47,10 +47,10 @@ public class Sprint {
 	public void setAnotaçao(String anotaçao) {
 		this.anotaçao = anotaçao;
 	}
-	public List<Caso_uso> getCasos_uso() {
+	public List<CasoUso> getCasos_uso() {
 		return casos_uso;
 	}
-	public void setCasos_uso(List<Caso_uso> casos_uso) {
+	public void setCasos_uso(List<CasoUso> casos_uso) {
 		this.casos_uso = casos_uso;
 	}
 }

@@ -9,11 +9,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name="TAB_TECNOLOGIA")
 
-public class Tecnologia_utilizada {
+public class TecnologiaUtilizada {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	
 	private Integer id_tecnlogia;
 	private String descrição;
 	private Integer produtividade_pf;

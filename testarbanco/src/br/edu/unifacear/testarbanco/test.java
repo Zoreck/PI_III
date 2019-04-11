@@ -1,11 +1,13 @@
 package br.edu.unifacear.testarbanco;
 
+import org.junit.Test;
+
 import br.edu.unifacear.projetointegrador3.dao.Dao;
 import br.edu.unifacear.projetointegrador3.dao.GenericDao;
 
 public class test {
-
-	public static void main(String[] args) {
+	@Test
+	public void inserircliente() {
 		
 		cliente cli = new cliente();
 		

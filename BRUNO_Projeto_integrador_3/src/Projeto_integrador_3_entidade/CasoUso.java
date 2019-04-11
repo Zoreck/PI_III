@@ -4,27 +4,47 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name="TAB_CASO_USO")
 
-public class Caso_uso {
+public class CasoUso {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	
-	private Integer id_caso_uso;
+	private Integer idCasoUso;
+	@ManyToOne
+	@JoinColumn(name="ID_CASOUSO")
+	private Projeto projeto;
 	private String nome;
 	private String objetivo;
 	private String prioridade;
 	private String anexo;
 	
-	public Integer getId_caso_uso() {
-		return id_caso_uso;
+	
+	public CasoUso() {
+		projeto = new Projeto();
 	}
-	public void setId_caso_uso(Integer id_caso_uso) {
-		this.id_caso_uso = id_caso_uso;
+	
+	public CasoUso(Integer idCasoUso, Projeto projeto, String nome, String objetivo, String prioridade, String anexo) {
+		super();
+		this.idCasoUso = idCasoUso;
+		this.projeto = projeto;
+		this.nome = nome;
+		this.objetivo = objetivo;
+		this.prioridade = prioridade;
+		this.anexo = anexo;
+	}
+
+	public Integer getId_caso_uso() {
+		return idCasoUso;
+	}
+	public void setId_caso_uso(Integer idCasoUso) {
+		this.idCasoUso = idCasoUso;
 	}
 	public String getNome() {
 		return nome;
