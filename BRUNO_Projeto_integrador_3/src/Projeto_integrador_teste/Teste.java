@@ -21,7 +21,9 @@ public class Teste {
 		DAO<Usuario> daousuario = new Generec_DAO<Usuario>();
 		daousuario.inserir(usuario);
 		
-		//assertEquals(true,usuario.getId() != null);
+		assertEquals(true,usuario.getId_usuario() != null);
+		
+		//teste
 	}
 	@Test
 	public void Deveria_listar_usuario() {
