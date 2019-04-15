@@ -7,8 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -33,9 +31,8 @@ public class Projeto {
 	private Integer scrum_master;
 	private Integer id_po;
 	
-	@ManyToOne
-	@JoinColumn(name="Time_Id")
-	private Time time;
+	@OneToMany(mappedBy="projeto")
+	private List<ProjetoUsuario> projetousuario;
 	
 	@OneToMany(mappedBy="projeto")
 	private List <Release> release;
