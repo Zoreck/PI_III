@@ -1,25 +1,41 @@
 package Projeto_integrador_3_entidade;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="TAB_SPRINT_CASO_USO")
 
-public class Sprint_Caso_uso {
+public class SprintCasoUso {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer idSprintCasoUso;
 	private Integer esforço_horas;
 	private Date data_inicio_prevista;
 	private Date data_fim_prevista;
 	private Date data_inicio_real;
 	private Date data_fim_real;
+	
+	@ManyToOne
+	@JoinColumn(name="idCasoUso")
+	private CasoUso casouso;
+	
+	@ManyToOne
+	@JoinColumn(name="idSprint")
+	private Sprint sprint;
+	
+	@OneToMany(mappedBy="idTramitacao")
+	private List<Tramitacao> tramitacao;
 	
 	public Integer getEsforço_horas() {
 		return esforço_horas;

@@ -1,29 +1,42 @@
 package Projeto_integrador_3_entidade;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="TAB_CASO_USO")
 
-public class Caso_uso {
+public class CasoUso {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id_caso_uso;
+	private Integer idCasoUso;
 	private String nome;
 	private String objetivo;
 	private String prioridade;
 	private String anexo;
 	
-	public Integer getId_caso_uso() {
-		return id_caso_uso;
+	@ManyToOne
+	@JoinColumn(name="casouso")
+	private Projeto projeto;
+	
+	@OneToMany(mappedBy="casouso")
+	private List<SprintCasoUso> Sprintcasouso;	
+	
+	
+	public Integer getidCasoUso() {
+		return idCasoUso;
 	}
-	public void setId_caso_uso(Integer id_caso_uso) {
-		this.id_caso_uso = id_caso_uso;
+	public void setidCasoUso(Integer idCasoUso) {
+		this.idCasoUso = idCasoUso;
 	}
 	public String getNome() {
 		return nome;

@@ -1,6 +1,7 @@
 package Projeto_integrador_3_entidade;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -24,6 +26,9 @@ public class Sprint {
 	@ManyToOne
 	@JoinColumn(name="Release_numeroRelease")
 	private Release release;
+	
+	@OneToMany(mappedBy="sprint")
+	private List<SprintCasoUso> Sprintcasouso;	
 	
 	public Integer getNumero_sprint() {
 		return numero_sprint;

@@ -6,17 +6,32 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="TAB_TRAMITAÇÃO")
-public class Tramitação {
+public class Tramitacao {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idTramitacao;
 	
 	private Date data_inicio;
 
+	@ManyToOne
+	@JoinColumn(name="idusuario")
+	private Usuario usuario;
+	
+	@ManyToOne
+	@JoinColumn(name="idprojeto")
+	private Projeto projeto;
+	
+	@ManyToOne
+	@JoinColumn(name="idsprintcasouso")
+	private SprintCasoUso sprintCasoUso;
+	
 	public Date getData_inicio() {
 		return data_inicio;
 	}

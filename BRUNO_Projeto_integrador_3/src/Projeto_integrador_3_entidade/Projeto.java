@@ -30,12 +30,23 @@ public class Projeto {
 	private Double custo_total;
 	private Integer scrum_master;
 	private Integer id_po;
+
+	@OneToMany(mappedBy="projeto")
+	private List<Tramitacao> tramitacao;
 	
 	@OneToMany(mappedBy="projeto")
 	private List<ProjetoUsuario> projetousuario;
 	
 	@OneToMany(mappedBy="projeto")
 	private List <Release> release;
+	
+	@OneToMany(mappedBy="projeto")
+	private List <CasoUso> casouso;
+	
+	@OneToMany(mappedBy="projeto")
+	private List <Tecnologia_utilizada> TecnologiaUtilizada;
+	
+	
 	
 	public Integer getScrum_master() {
 		return scrum_master;
@@ -121,5 +132,24 @@ public class Projeto {
 	public void setRelease(List<Release> release) {
 		this.release = release;
 	}
+	public List<ProjetoUsuario> getProjetousuario() {
+		return projetousuario;
+	}
+	public void setProjetousuario(List<ProjetoUsuario> projetousuario) {
+		this.projetousuario = projetousuario;
+	}
+	public List<CasoUso> getCasouso() {
+		return casouso;
+	}
+	public void setCasouso(List<CasoUso> casouso) {
+		this.casouso = casouso;
+	}
+	public List<Tecnologia_utilizada> getTecnologiaUtilizada() {
+		return TecnologiaUtilizada;
+	}
+	public void setTecnologiaUtilizada(List<Tecnologia_utilizada> tecnologiaUtilizada) {
+		TecnologiaUtilizada = tecnologiaUtilizada;
+	}
+	
 	
 }

@@ -22,6 +22,9 @@ public class Usuario {
 	private String senha;
 	
 	@OneToMany(mappedBy="usuario")
+	private List<Tramitacao> tramitacao;
+	
+	@OneToMany(mappedBy="usuario")
 	private List<ProjetoUsuario> projetousuario;
 	
 	public Integer getIdUsuario() {

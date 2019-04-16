@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -13,15 +15,19 @@ public class Tecnologia_utilizada {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id_tecnlogia;
+	private Integer idTecnologia;
 	private String descrição;
 	private Integer produtividade_pf;
 	
-	public Integer getId_tecnlogia() {
-		return id_tecnlogia;
+	@ManyToOne
+	@JoinColumn(name="tecnologiautilizada")
+	private Projeto projeto;
+	
+	public Integer getId_tecnologia() {
+		return idTecnologia;
 	}
-	public void setId_tecnlogia(Integer id_tecnlogia) {
-		this.id_tecnlogia = id_tecnlogia;
+	public void setIdTecnologia(Integer idTecnologia) {
+		this.idTecnologia = idTecnologia;
 	}
 	public String getDescrição() {
 		return descrição;
