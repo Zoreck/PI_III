@@ -1,4 +1,4 @@
-package Projeto_integrador_teste;
+package br.edu.unifacear.projetointegrador3.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import Projeto_integrador_3_entidade.Usuario;
+import br.edu.unifacear.projetointegrador.entity.Usuario;
 import br.edu.unifacear.projetointegrador3.DAO.DAO;
 import br.edu.unifacear.projetointegrador3.DAO.Generec_DAO;
 

@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import Projeto_integrador_3_entidade.Usuario;
+import br.edu.unifacear.projetointegrador.entity.Usuario;
 import br.edu.unifacear.projetointegrador3.DAO.Generec_DAO;
 
 public class UsuarioBusiness {
