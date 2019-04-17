@@ -6,9 +6,9 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import Projeto_integrador_3_DAO.DAO;
-import Projeto_integrador_3_DAO.Generec_DAO;
 import Projeto_integrador_3_entidade.Usuario;
+import br.edu.unifacear.projetointegrador3.DAO.DAO;
+import br.edu.unifacear.projetointegrador3.DAO.Generec_DAO;
 
 public class Teste {
 

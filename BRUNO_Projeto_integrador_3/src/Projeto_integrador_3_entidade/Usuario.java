@@ -20,6 +20,7 @@ public class Usuario {
 	private String nome;
 	private String login;
 	private String senha;
+	private String cpf;
 	
 	@OneToMany(mappedBy="usuario")
 	private List<Tramitacao> tramitacao;
@@ -50,6 +51,24 @@ public class Usuario {
 	}
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	public List<Tramitacao> getTramitacao() {
+		return tramitacao;
+	}
+	public void setTramitacao(List<Tramitacao> tramitacao) {
+		this.tramitacao = tramitacao;
+	}
+	public List<ProjetoUsuario> getProjetousuario() {
+		return projetousuario;
+	}
+	public void setProjetousuario(List<ProjetoUsuario> projetousuario) {
+		this.projetousuario = projetousuario;
 	}
 	
 	
