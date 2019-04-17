@@ -86,7 +86,7 @@ public class UsuarioBusiness {
 		for (int i = 0; i<usuarios.size(); i++) {
 			if (cpf.equals(usuarios.get(i).getCpf())) {
 				
-				//daoUsuario.excluir(usuarios.get(i));	
+				daoUsuario.excluir(usuarios.get(i));	
 				System.out.println("deveria excluir");
 				break;
 			}
