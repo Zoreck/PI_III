@@ -1,4 +1,4 @@
-package br.edu.unifacear.projetointegrador.entity;
+package br.edu.unifacear.projetointegrador3.entity;
 
 import java.util.Date;
 

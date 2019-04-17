@@ -2,9 +2,9 @@ package br.edu.unifacear.projetointegrador3.test;
 
 import org.junit.Test;
 
-import br.edu.unifacear.projetointegrador.entity.Usuario;
 import br.edu.unifacear.projetointegrador3.business.BusinessException;
 import br.edu.unifacear.projetointegrador3.business.UsuarioBusiness;
+import br.edu.unifacear.projetointegrador3.entity.Usuario;
 
 public class newTest {
 	
