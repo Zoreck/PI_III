@@ -1,10 +1,13 @@
 package br.edu.unifacear.projetointegrador3.DAO;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+
+import br.edu.unifacear.projetointegrador3.entity.Usuario;
 
 public class Generec_DAO <T> implements DAO<T> {
 	@Override
@@ -40,7 +43,7 @@ public class Generec_DAO <T> implements DAO<T> {
 	public void excluir(T t) {
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
-		em.remove(t);
+		em.remove(em.merge(t));
 		em.getTransaction().commit();
 		em.close();
 	}
@@ -60,5 +63,35 @@ public class Generec_DAO <T> implements DAO<T> {
 		em.close();
 		return result;
 	}
-
+	/*public List<T> listarWhereTeste(Class<T> t, Map<String,Object> argumentos){
+		
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		
+		List<T> list = new ArrayList<T>();
+		
+		Query q = em.createQuery("select t from Usario t where t.cpf = '890.004.349-15'");
+		
+		for (String indice : argumentos.keySet()) {
+			q.setParameter(indice, argumentos.get(indice));
+		}
+		list = q.getResultList();
+		em.getTransaction().commit();
+		em.close();
+		  
+		return list;  
+	}
+	
+	public String ExcluirUsuario(T t, Integer id) {
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		System.out.println("meu cu");
+		Query q = em.createQuery("delete from tab_usuario where tab_suario.idUsuario = '8'");
+		q.executeUpdate();
+		em.getTransaction().commit();
+		
+		
+		return null;
+	}*/
+	
 }

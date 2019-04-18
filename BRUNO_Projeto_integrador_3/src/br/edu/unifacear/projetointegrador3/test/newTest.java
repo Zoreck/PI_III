@@ -8,7 +8,7 @@ import br.edu.unifacear.projetointegrador3.entity.Usuario;
 
 public class newTest {
 	
-	/*@Test
+	@Test
 	public void inserirUsuario() throws BusinessException {
 
 		Usuario user = new Usuario();
@@ -44,17 +44,17 @@ public class newTest {
 		} catch (BusinessException e) {
 			e.printStackTrace();
 		}
-	}*/
-	@Test
+	}
+	/*@Test
 	public void excluirUsuario() throws BusinessException{
 		
-		String cpf = ("890.004.349-15");
+		String cpf = ("090.004.349-95");
 		
 		try {
-			new UsuarioBusiness().deveriaExcluirUsuario(cpf);
+			new UsuarioBusiness().excluiruser(cpf);
 		} catch (BusinessException e) {
 			e.printStackTrace();
 		}
-	}
+	}*/
 
 }

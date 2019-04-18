@@ -1,8 +1,8 @@
 package br.edu.unifacear.projetointegrador3.business;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import br.edu.unifacear.projetointegrador3.DAO.Generec_DAO;
 import br.edu.unifacear.projetointegrador3.entity.Usuario;
@@ -64,12 +64,12 @@ public class UsuarioBusiness {
 
 		List<Usuario> usuarios = daoUsuario.listarTodos(Usuario.class);
 
-		for (int i = 0; i<usuarios.size(); i++) {
+		for (int i = 0; i < usuarios.size(); i++) {
 			if (cpf.equals(usuarios.get(i).getCpf())) {
 				usuarios.get(i).setNome(nome);
-				
-				daoUsuario.alterar(usuarios.get(i));	
-				
+
+				daoUsuario.alterar(usuarios.get(i));
+
 				break;
 			}
 		}
@@ -77,22 +77,55 @@ public class UsuarioBusiness {
 		return null;
 	}
 
-	public String deveriaExcluirUsuario(String cpf) throws BusinessException {
+	/*
+	 * public String deveriaExcluirUsuario(String cpf) throws BusinessException {
+	 * 
+	 * Generec_DAO<Usuario> daoUsuario = new Generec_DAO<Usuario>();
+	 * 
+	 * String where; List<Usuario> usuarios = new ArrayList<Usuario>();
+	 * 
+	 * //where = "where t.cpf = :cpf";
+	 * 
+	 * HashMap<String,Object> argumentos = new HashMap<String,Object>();
+	 * argumentos.put("cpf", cpf);
+	 * 
+	 * 
+	 * usuarios = daoUsuario.listarWhereTeste(Usuario.class, argumentos); for (int i
+	 * = 0; i<usuarios.size(); i++) { if (cpf.equals(usuarios.get(i).getCpf())) {
+	 * 
+	 * daoUsuario.excluir(usuarios.get(i)); System.out.println("deveria excluir");
+	 * break; } }
+	 * 
+	 * return null; }
+	
+
+	public String excluiruser(String cpf) throws BusinessException {
 
 		Generec_DAO<Usuario> daoUsuario = new Generec_DAO<Usuario>();
 
-		List<Usuario> usuarios = daoUsuario.listarTodos(Usuario.class);
+		List<Usuario> list = daoUsuario.listarTodos(Usuario.class);
+		list = daoUsuario.listarTodos(Usuario.class);
 
-		for (int i = 0; i<usuarios.size(); i++) {
-			if (cpf.equals(usuarios.get(i).getCpf())) {
-				
-				daoUsuario.excluir(usuarios.get(i));	
-				System.out.println("deveria excluir");
+		System.out.println(list.size());
+		System.out.println("meu pinto"+cpf);
+		
+		for(Usuario u : list) {
+			System.out.println(u.getCpf());
+		}
+		
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println("cpf: "+ cpf + "BUCETA "+ list.get(i).getCpf());
+			if (cpf.equals(list.get(i).getCpf())) {
+				Integer id = list.get(i).getIdUsuario();
+				System.out.println();
+				daoUsuario.ExcluirUsuario(list.get(i), id);
 				break;
+			} else if (i == list.size() - 1) {
+				throw new BusinessException("FILHA DA PUTA");
 			}
 		}
 
 		return null;
-	}
-	
+	} */
+
 }

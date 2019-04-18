@@ -16,7 +16,7 @@ public class Tecnologia_utilizada {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idTecnologia;
-	private String descrição;
+	private String descricao;
 	private Integer produtividade_pf;
 	
 	@ManyToOne
@@ -29,11 +29,11 @@ public class Tecnologia_utilizada {
 	public void setIdTecnologia(Integer idTecnologia) {
 		this.idTecnologia = idTecnologia;
 	}
-	public String getDescrição() {
-		return descrição;
+	public String getDescricao() {
+		return descricao;
 	}
-	public void setDescrição(String descrição) {
-		this.descrição = descrição;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 	public Integer getProdutividade_pf() {
 		return produtividade_pf;
