@@ -63,7 +63,8 @@ public class Generec_DAO <T> implements DAO<T> {
 		em.close();
 		return result;
 	}
-	/*public List<T> listarWhereTeste(Class<T> t, Map<String,Object> argumentos){
+	/*
+	 	public List<T> listarWhereTeste(Class<T> t, Map<String,Object> argumentos){
 		
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();

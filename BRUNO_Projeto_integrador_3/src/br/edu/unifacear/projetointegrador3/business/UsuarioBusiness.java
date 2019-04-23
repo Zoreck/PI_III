@@ -9,7 +9,7 @@ import br.edu.unifacear.projetointegrador3.entity.Usuario;
 
 public class UsuarioBusiness {
 
-	public String deveriaSalvarUsuario(Usuario usuario) throws BusinessException {
+	public String SalvarUsuario(Usuario usuario) throws BusinessException {
 
 		Generec_DAO<Usuario> daoUsuario = new Generec_DAO<Usuario>();
 
@@ -41,7 +41,7 @@ public class UsuarioBusiness {
 		return null;
 	}
 
-	public String deveriaListarUsuario() throws BusinessException {
+	public String ListarUsuario() throws BusinessException {
 
 		Generec_DAO<Usuario> daoUsuario = new Generec_DAO<Usuario>();
 
@@ -58,7 +58,7 @@ public class UsuarioBusiness {
 		return null;
 	}
 
-	public String deveriaAlterarUsuario(String cpf, String nome) throws BusinessException {
+	public String AlterarUsuario(String cpf, String nome) throws BusinessException {
 
 		Generec_DAO<Usuario> daoUsuario = new Generec_DAO<Usuario>();
 
@@ -77,29 +77,37 @@ public class UsuarioBusiness {
 		return null;
 	}
 
-	/*
-	 * public String deveriaExcluirUsuario(String cpf) throws BusinessException {
-	 * 
-	 * Generec_DAO<Usuario> daoUsuario = new Generec_DAO<Usuario>();
-	 * 
-	 * String where; List<Usuario> usuarios = new ArrayList<Usuario>();
-	 * 
-	 * //where = "where t.cpf = :cpf";
-	 * 
-	 * HashMap<String,Object> argumentos = new HashMap<String,Object>();
-	 * argumentos.put("cpf", cpf);
-	 * 
-	 * 
-	 * usuarios = daoUsuario.listarWhereTeste(Usuario.class, argumentos); for (int i
-	 * = 0; i<usuarios.size(); i++) { if (cpf.equals(usuarios.get(i).getCpf())) {
-	 * 
-	 * daoUsuario.excluir(usuarios.get(i)); System.out.println("deveria excluir");
-	 * break; } }
-	 * 
-	 * return null; }
+	
+	  public String ExcluirUsuario(String cpf) throws BusinessException {
+	  
+	  Generec_DAO<Usuario> daoUsuario = new Generec_DAO<Usuario>();
+	  
+	  String where; 
+	  List<Usuario> usuarios = new ArrayList<Usuario>();
+	  
+	  //String where = " t.dataDevolucao <= :agora ";
+	  where = " where t.cpf = :cpf";
+	  
+	  HashMap<String,Object> argumentos = new HashMap<String,Object>();
+	  argumentos.put("cpf", cpf);
+	  
+	  
+	  usuarios = daoUsuario.listarWhere(Usuario.class, where, argumentos); 
+	  for (int i= 0; i<usuarios.size(); i++) { 
+		  if (cpf.equals(usuarios.get(i).getCpf())) {
+	  
+			  daoUsuario.excluir(usuarios.get(i));
+			  System.out.println("deveria excluir");
+			  break; 
+		  }
+		  
+	  }
+	  
+	  return null; 
+	 }
 	
 
-	public String excluiruser(String cpf) throws BusinessException {
+	/*public String excluiruser(String cpf) throws BusinessException {
 
 		Generec_DAO<Usuario> daoUsuario = new Generec_DAO<Usuario>();
 
@@ -118,7 +126,7 @@ public class UsuarioBusiness {
 			if (cpf.equals(list.get(i).getCpf())) {
 				Integer id = list.get(i).getIdUsuario();
 				System.out.println();
-				daoUsuario.ExcluirUsuario(list.get(i), id);
+				daoUsuario.excluir(list.get(i));
 				break;
 			} else if (i == list.size() - 1) {
 				throw new BusinessException("FILHA DA PUTA");
@@ -126,6 +134,6 @@ public class UsuarioBusiness {
 		}
 
 		return null;
-	} */
+	}*/
 
 }

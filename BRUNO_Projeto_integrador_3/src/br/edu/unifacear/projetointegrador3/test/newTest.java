@@ -19,7 +19,7 @@ public class newTest {
 		user.setCpf("890.004.349-15");
 		
 		try {
-			new UsuarioBusiness().deveriaSalvarUsuario(user);
+			new UsuarioBusiness().SalvarUsuario(user);
 		} catch (BusinessException e) {
 			e.printStackTrace();
 		}		
@@ -28,7 +28,7 @@ public class newTest {
 	public void listarUsario() throws BusinessException {
 
 		try {
-			new UsuarioBusiness().deveriaListarUsuario();
+			new UsuarioBusiness().ListarUsuario();
 		} catch (BusinessException e) {
 			e.printStackTrace();
 		}		
@@ -40,21 +40,21 @@ public class newTest {
 		String nome = ("CACETUDO");
 		
 		try {
-			new UsuarioBusiness().deveriaAlterarUsuario(cpf,nome);
+			new UsuarioBusiness().AlterarUsuario(cpf,nome);
 		} catch (BusinessException e) {
 			e.printStackTrace();
 		}
 	}
-	/*@Test
+	@Test
 	public void excluirUsuario() throws BusinessException{
 		
 		String cpf = ("090.004.349-95");
 		
 		try {
-			new UsuarioBusiness().excluiruser(cpf);
+			new UsuarioBusiness().ExcluirUsuario(cpf);
 		} catch (BusinessException e) {
 			e.printStackTrace();
 		}
-	}*/
+	}
 
 }
